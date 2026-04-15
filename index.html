@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Wedding Invitation">
+    <meta property="og:description" content="You're invited to our wedding">
+    
+    <!-- IMPORTANT: Replace the 'https://yourwebsite.vercel.app' parts with your ACTUAL Vercel URL! -->
+    <meta property="og:url" content="https://leora4.vercel.app/">
+    <meta property="og:image" content="https://yourwebsite.vercel.app/assets/images/preview.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Playfair Display for headings, Montserrat for standard text, Great Vibes for Thank You -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="no-scroll">
+    <div class="scroll-container">
+        <!-- White blink transition element -->
+        <div id="blink-overlay"></div>
+
+        <!-- Section 1: Intro Video -->
+        <section id="section-1" class="fullscreen-section">
+            <video id="main1-video" playsinline muted preload="auto">
+                <source src="assets/videos/main1.mp4" type="video/mp4">
+            </video>
+            <div id="tap-to-play">
+                <div class="tap-icon"></div>
+                <p>Tap to start</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Video Background Loop -->
+        <section id="section-2" class="fullscreen-section">
+            <video id="main2-video" playsinline autoplay loop muted preload="auto">
+                <source src="assets/videos/main2.mp4" type="video/mp4">
+            </video>
+            <div class="overlay-content">
+                <h1 class="elegant-names">Fawaaz<br><span class="weds-text">weds</span><br>Hiba</h1>
+            </div>
+            <div id="scroll-popup" class="hidden">
+                <div class="scroll-box">
+                    <span>Scroll Down</span>
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Image Page -->
+        <section id="section-3" class="content-section">
+            <img src="assets/images/2.png" alt="Greeting Page" class="full-width-img" loading="lazy">
+        </section>
+
+        <!-- Section 4: Scratch Card & Date Reveal -->
+        <section id="section-4" class="content-section relative light-bg">
+            <img src="assets/images/flag.png" alt="Flags" class="flag-bunting" loading="lazy">
+            <h2 class="scratch-heading">Save the Date</h2>
+            <p class="scratch-subheading">scratch the circles to reveal</p>
+            <div class="scratch-wrapper">
+                <div class="date-reveal">
+                    <div class="date-circle"><span>25</span></div>
+                    <div class="date-circle"><span>12</span></div>
+                    <div class="date-circle"><span>2026</span></div>
+                </div>
+                <canvas id="scratch-pad"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 5: Venue Details -->
+        <section id="section-5" class="content-section light-bg venue-section">
+            <div id="countdown-container">
+                <h3 class="countdown-title">Counting down to the big day</h3>
+                <div class="countdown-bar">
+                    <div class="cd-box"><span id="cd-months">00</span><small>Months</small></div>
+                    <div class="cd-box"><span id="cd-days">00</span><small>Days</small></div>
+                    <div class="cd-box"><span id="cd-hours">00</span><small>Hours</small></div>
+                    <div class="cd-box"><span id="cd-mins">00</span><small>Mins</small></div>
+                </div>
+            </div>
+
+            <div id="rsvp-section">
+                <h3 class="rsvp-title">Will you join us?</h3>
+                <div class="rsvp-buttons">
+                    <button id="btn-yes" class="rsvp-btn btn-gold">Yes, I will attend</button>
+                    <button id="btn-no" class="rsvp-btn btn-outline">Sorry, I cannot</button>
+                </div>
+                <div id="rsvp-response" class="hidden-msg"></div>
+            </div>
+
+            <div class="venue-header">
+                <img src="assets/images/heart.png" alt="Heart divider" class="heart-divider" loading="lazy">
+                <h3 class="venue-label">📍 VENUE</h3>
+                <h1 class="venue-title">Bianco castel</h1>
+                <p class="venue-subtitle">the luxuary space , tirur</p>
+            </div>
+
+            <div class="details-boxes">
+                <div class="box">
+                    <span class="icon">📅</span>
+                    <h3>DATE</h3>
+                    <p>Saturday, June<br>14, 2026</p>
+                </div>
+                <div class="box">
+                    <span class="icon">🕒</span>
+                    <h3>TIME</h3>
+                    <p>4:00 PM - 10:00<br>PM</p>
+                </div>
+            </div>
+
+            <div class="map-wrapper">
+                <div class="map-overlay">
+                    <img src="assets/images/map.jpg" alt="Map Pin" class="map-pin" onerror="this.style.display='none'">
+                    <span>tap to see loaction</span>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25279998188!2d-74.14448767931317!3d40.69763123812739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1713028213600!5m2!1sen!2sus"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <img src="assets/images/stg.png" alt="Venue Stage" class="stage-img" loading="lazy">
+        </section>
+
+        <!-- Section 6: Thank You Page -->
+        <section id="section-6" class="content-section light-bg text-center">
+            <img src="assets/images/flower.png" alt="Flower Decoration" class="flower-img hidden-anim" style="transition-delay: 0s" loading="lazy">
+            <h1 class="thank-you-text hidden-anim" style="transition-delay: 0.4s">thank you</h1>
+        </section>
+    </div>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
